@@ -1,0 +1,47 @@
+apiVersion: templates.gatekeeper.sh/v1beta1
+kind: ConstraintTemplate
+metadata:
+  name: tmc-require-labels
+spec:
+  crd:
+    spec:
+      names:
+        kind: tmc-require-labels
+      validation:
+        # Schema for the `parameters` field
+        openAPIV3Schema:
+          properties:
+            labels:
+              type: array
+              required: ["key"]
+              minItems: 1
+              items:
+                type: object
+                properties:
+                  key:
+                    type: string
+                    description: "The label key to enforce"
+                  value:
+                    type: string
+                    description: "Optional label value to enforce (if left empty, only key will be enforced)"
+  targets:
+    - target: admission.k8s.gatekeeper.sh
+      rego: |
+        package tmcrequirelabels
+
+        violation[{"msg": msg, "details": {"missing_labels": missing}}] {
+          provided := {label | input.review.object.metadata.labels[label]}
+          required := {label | label := input.parameters.labels[_].key}
+          missing := required - provided
+          count(missing) > 0
+          msg := sprintf("You must provide labels with keys: %v", [missing])
+        }
+
+        violation[{"msg": msg}] {
+          value := input.review.object.metadata.labels[key]
+          expected := input.parameters.labels[_]
+          expected.key == key
+          expected.value != ""
+          expected.value != value
+          msg := sprintf("Label <%v: %v> must match the value: %v", [key, value, expected.value])
+        }

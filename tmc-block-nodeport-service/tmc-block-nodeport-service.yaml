@@ -1,0 +1,19 @@
+apiVersion: templates.gatekeeper.sh/v1beta1
+kind: ConstraintTemplate
+metadata:
+  name: tmc-block-nodeport-service
+spec:
+  crd:
+    spec:
+      names:
+        kind: tmc-block-nodeport-service
+  targets:
+    - target: admission.k8s.gatekeeper.sh
+      rego: |
+        package tmcblocknodeportsvc
+        violation[{"msg": msg}] {
+          input.review.kind.kind == "Service"
+          input.review.kind.group == ""
+          input.review.object.spec.type == "NodePort"
+          msg := "service of type NodePort is forbidden"
+        }

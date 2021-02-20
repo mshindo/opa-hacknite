@@ -1,0 +1,228 @@
+{
+    "parameters": {
+        "labels": [
+            {
+                "value": "production",
+                "key": "env"
+            }
+        ]
+    },
+    "review": {
+        "uid": "b46c610e-d455-4f1f-884e-da8b5750d4a2",
+        "name": "nginx-deployment",
+        "namespace": "default",
+        "_unstable": {
+            "namespace": {
+                "metadata": {
+                    "name": "default",
+                    "selfLink": "/api/v1/namespaces/default",
+                    "uid": "548b2194-9b49-418c-b0e3-bea12dceac5b",
+                    "resourceVersion": "152",
+                    "creationTimestamp": "2021-02-18T13:07:57Z",
+                    "managedFields": [
+                        {
+                            "time": "2021-02-18T13:07:57Z",
+                            "fieldsType": "FieldsV1",
+                            "fieldsV1": {
+                                "f:status": {
+                                    "f:phase": {}
+                                }
+                            },
+                            "manager": "kube-apiserver",
+                            "operation": "Update",
+                            "apiVersion": "v1"
+                        }
+                    ]
+                },
+                "spec": {
+                    "finalizers": [
+                        "kubernetes"
+                    ]
+                },
+                "status": {
+                    "phase": "Active"
+                },
+                "kind": "Namespace",
+                "apiVersion": "v1"
+            }
+        },
+        "kind": {
+            "version": "v1",
+            "kind": "Deployment",
+            "group": "apps"
+        },
+        "resource": {
+            "group": "apps",
+            "version": "v1",
+            "resource": "deployments"
+        },
+        "requestKind": {
+            "kind": "Deployment",
+            "group": "apps",
+            "version": "v1"
+        },
+        "requestResource": {
+            "group": "apps",
+            "version": "v1",
+            "resource": "deployments"
+        },
+        "object": {
+            "apiVersion": "apps/v1",
+            "kind": "Deployment",
+            "metadata": {
+                "creationTimestamp": "2021-02-19T13:23:42Z",
+                "labels": {
+                    "app": "nginx",
+                    "env": "production"
+                },
+                "annotations": {
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"apps/v1\",\"kind\":\"Deployment\",\"metadata\":{\"annotations\":{},\"labels\":{\"app\":\"nginx\",\"env\":\"production\"},\"name\":\"nginx-deployment\",\"namespace\":\"default\"},\"spec\":{\"selector\":{\"matchLabels\":{\"app\":\"nginx\"}},\"template\":{\"metadata\":{\"labels\":{\"app\":\"nginx\"}},\"spec\":{\"containers\":[{\"image\":\"nginx:1.14.2\",\"name\":\"nginx\",\"ports\":[{\"containerPort\":80}]}]}}}}\n"
+                },
+                "managedFields": [
+                    {
+                        "manager": "kubectl-client-side-apply",
+                        "operation": "Update",
+                        "apiVersion": "apps/v1",
+                        "time": "2021-02-19T13:23:42Z",
+                        "fieldsType": "FieldsV1",
+                        "fieldsV1": {
+                            "f:metadata": {
+                                "f:annotations": {
+                                    "f:kubectl.kubernetes.io/last-applied-configuration": {},
+                                    ".": {}
+                                },
+                                "f:labels": {
+                                    "f:app": {},
+                                    "f:env": {},
+                                    ".": {}
+                                }
+                            },
+                            "f:spec": {
+                                "f:progressDeadlineSeconds": {},
+                                "f:replicas": {},
+                                "f:revisionHistoryLimit": {},
+                                "f:selector": {
+                                    "f:matchLabels": {
+                                        ".": {},
+                                        "f:app": {}
+                                    }
+                                },
+                                "f:strategy": {
+                                    "f:rollingUpdate": {
+                                        ".": {},
+                                        "f:maxSurge": {},
+                                        "f:maxUnavailable": {}
+                                    },
+                                    "f:type": {}
+                                },
+                                "f:template": {
+                                    "f:spec": {
+                                        "f:schedulerName": {},
+                                        "f:securityContext": {},
+                                        "f:terminationGracePeriodSeconds": {},
+                                        "f:containers": {
+                                            "k:{\"name\":\"nginx\"}": {
+                                                ".": {},
+                                                "f:image": {},
+                                                "f:imagePullPolicy": {},
+                                                "f:name": {},
+                                                "f:ports": {
+                                                    ".": {},
+                                                    "k:{\"containerPort\":80,\"protocol\":\"TCP\"}": {
+                                                        ".": {},
+                                                        "f:containerPort": {},
+                                                        "f:protocol": {}
+                                                    }
+                                                },
+                                                "f:resources": {},
+                                                "f:terminationMessagePath": {},
+                                                "f:terminationMessagePolicy": {}
+                                            }
+                                        },
+                                        "f:dnsPolicy": {},
+                                        "f:restartPolicy": {}
+                                    },
+                                    "f:metadata": {
+                                        "f:labels": {
+                                            ".": {},
+                                            "f:app": {}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ],
+                "name": "nginx-deployment",
+                "namespace": "default",
+                "uid": "ad016663-91ca-42ef-a3ff-dca19bf1d8d7",
+                "generation": 1
+            },
+            "spec": {
+                "replicas": 1,
+                "selector": {
+                    "matchLabels": {
+                        "app": "nginx"
+                    }
+                },
+                "template": {
+                    "spec": {
+                        "terminationGracePeriodSeconds": 30,
+                        "dnsPolicy": "ClusterFirst",
+                        "securityContext": {},
+                        "schedulerName": "default-scheduler",
+                        "containers": [
+                            {
+                                "resources": {},
+                                "terminationMessagePath": "/dev/termination-log",
+                                "terminationMessagePolicy": "File",
+                                "imagePullPolicy": "IfNotPresent",
+                                "name": "nginx",
+                                "image": "nginx:1.14.2",
+                                "ports": [
+                                    {
+                                        "containerPort": 80,
+                                        "protocol": "TCP"
+                                    }
+                                ]
+                            }
+                        ],
+                        "restartPolicy": "Always"
+                    },
+                    "metadata": {
+                        "creationTimestamp": null,
+                        "labels": {
+                            "app": "nginx"
+                        }
+                    }
+                },
+                "strategy": {
+                    "type": "RollingUpdate",
+                    "rollingUpdate": {
+                        "maxUnavailable": "25%",
+                        "maxSurge": "25%"
+                    }
+                },
+                "revisionHistoryLimit": 10,
+                "progressDeadlineSeconds": 600
+            },
+            "status": {}
+        },
+        "dryRun": false,
+        "options": {
+            "kind": "CreateOptions",
+            "apiVersion": "meta.k8s.io/v1",
+            "fieldManager": "kubectl-client-side-apply"
+        },
+        "operation": "CREATE",
+        "userInfo": {
+            "uid": "vmware.com:7a3e0819-e53a-4fad-978f-0fd8aa6ecb2d",
+            "groups": [
+                "tmc:admin",
+                "system:authenticated"
+            ],
+            "username": "shindom"
+        },
+        "oldObject": null
+    }
+}
