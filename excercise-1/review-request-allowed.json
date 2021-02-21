@@ -1,0 +1,198 @@
+{
+    "parameters": {},
+    "review": {
+        "namespace": "default",
+        "oldObject": null,
+        "uid": "cef0e495-81a9-4ee2-b24a-e2bbac9acf51",
+        "operation": "CREATE",
+        "userInfo": {
+            "groups": [
+                "tmc:admin",
+                "system:authenticated"
+            ],
+            "username": "shindom",
+            "uid": "vmware.com:7a3e0819-e53a-4fad-978f-0fd8aa6ecb2d"
+        },
+        "requestResource": {
+            "group": "",
+            "version": "v1",
+            "resource": "pods"
+        },
+        "name": "nginx-non-privileged",
+        "_unstable": {
+            "namespace": {
+                "kind": "Namespace",
+                "apiVersion": "v1",
+                "metadata": {
+                    "name": "default",
+                    "selfLink": "/api/v1/namespaces/default",
+                    "uid": "548b2194-9b49-418c-b0e3-bea12dceac5b",
+                    "resourceVersion": "152",
+                    "creationTimestamp": "2021-02-18T13:07:57Z",
+                    "managedFields": [
+                        {
+                            "fieldsType": "FieldsV1",
+                            "fieldsV1": {
+                                "f:status": {
+                                    "f:phase": {}
+                                }
+                            },
+                            "manager": "kube-apiserver",
+                            "operation": "Update",
+                            "apiVersion": "v1",
+                            "time": "2021-02-18T13:07:57Z"
+                        }
+                    ]
+                },
+                "spec": {
+                    "finalizers": [
+                        "kubernetes"
+                    ]
+                },
+                "status": {
+                    "phase": "Active"
+                }
+            }
+        },
+        "kind": {
+            "group": "",
+            "version": "v1",
+            "kind": "Pod"
+        },
+        "resource": {
+            "group": "",
+            "version": "v1",
+            "resource": "pods"
+        },
+        "requestKind": {
+            "group": "",
+            "version": "v1",
+            "kind": "Pod"
+        },
+        "object": {
+            "apiVersion": "v1",
+            "kind": "Pod",
+            "metadata": {
+                "creationTimestamp": "2021-02-21T01:48:20Z",
+                "labels": {
+                    "app": "nginx"
+                },
+                "annotations": {
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Pod\",\"metadata\":{\"annotations\":{},\"labels\":{\"app\":\"nginx\"},\"name\":\"nginx-non-privileged\",\"namespace\":\"default\"},\"spec\":{\"containers\":[{\"image\":\"nginx\",\"name\":\"nginx\",\"securityContext\":{\"privileged\":false}}]}}\n",
+                    "kubernetes.io/psp": "vmware-system-tmc-privileged"
+                },
+                "managedFields": [
+                    {
+                        "manager": "kubectl-client-side-apply",
+                        "operation": "Update",
+                        "apiVersion": "v1",
+                        "time": "2021-02-21T01:48:20Z",
+                        "fieldsType": "FieldsV1",
+                        "fieldsV1": {
+                            "f:metadata": {
+                                "f:annotations": {
+                                    ".": {},
+                                    "f:kubectl.kubernetes.io/last-applied-configuration": {}
+                                },
+                                "f:labels": {
+                                    ".": {},
+                                    "f:app": {}
+                                }
+                            },
+                            "f:spec": {
+                                "f:restartPolicy": {},
+                                "f:schedulerName": {},
+                                "f:securityContext": {},
+                                "f:terminationGracePeriodSeconds": {},
+                                "f:containers": {
+                                    "k:{\"name\":\"nginx\"}": {
+                                        "f:imagePullPolicy": {},
+                                        "f:name": {},
+                                        "f:resources": {},
+                                        "f:securityContext": {
+                                            ".": {},
+                                            "f:privileged": {}
+                                        },
+                                        "f:terminationMessagePath": {},
+                                        "f:terminationMessagePolicy": {},
+                                        ".": {},
+                                        "f:image": {}
+                                    }
+                                },
+                                "f:dnsPolicy": {},
+                                "f:enableServiceLinks": {}
+                            }
+                        }
+                    }
+                ],
+                "name": "nginx-non-privileged",
+                "namespace": "default",
+                "uid": "bf7a99e6-3d08-4425-957e-1f03b6aefce9"
+            },
+            "spec": {
+                "enableServiceLinks": true,
+                "preemptionPolicy": "PreemptLowerPriority",
+                "volumes": [
+                    {
+                        "name": "default-token-b4pkt",
+                        "secret": {
+                            "secretName": "default-token-b4pkt"
+                        }
+                    }
+                ],
+                "containers": [
+                    {
+                        "volumeMounts": [
+                            {
+                                "name": "default-token-b4pkt",
+                                "readOnly": true,
+                                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount"
+                            }
+                        ],
+                        "terminationMessagePath": "/dev/termination-log",
+                        "terminationMessagePolicy": "File",
+                        "imagePullPolicy": "Always",
+                        "securityContext": {
+                            "privileged": false
+                        },
+                        "name": "nginx",
+                        "image": "nginx",
+                        "resources": {}
+                    }
+                ],
+                "restartPolicy": "Always",
+                "serviceAccount": "default",
+                "schedulerName": "default-scheduler",
+                "tolerations": [
+                    {
+                        "operator": "Exists",
+                        "effect": "NoExecute",
+                        "tolerationSeconds": 300,
+                        "key": "node.kubernetes.io/not-ready"
+                    },
+                    {
+                        "key": "node.kubernetes.io/unreachable",
+                        "operator": "Exists",
+                        "effect": "NoExecute",
+                        "tolerationSeconds": 300
+                    }
+                ],
+                "terminationGracePeriodSeconds": 30,
+                "dnsPolicy": "ClusterFirst",
+                "serviceAccountName": "default",
+                "securityContext": {},
+                "priority": 0
+            },
+            "status": {
+                "phase": "Pending",
+                "qosClass": "BestEffort"
+            }
+        },
+        "dryRun": false,
+        "options": {
+            "kind": "CreateOptions",
+            "apiVersion": "meta.k8s.io/v1",
+            "fieldManager": "kubectl-client-side-apply"
+        }
+    }
+}
