@@ -1,0 +1,82 @@
+{
+    "parameters": {
+        "words": [
+            "master",
+            "slave",
+            "white",
+            "black"
+        ]
+    },
+    "review": {
+        "uid": "4e34b23b-7118-4f74-9702-28de95db3859",
+        "requestResource": {
+            "group": "",
+            "version": "v1",
+            "resource": "namespaces"
+        },
+        "name": "ns-good",
+        "oldObject": null,
+        "dryRun": false,
+        "_unstable": {},
+        "options": {
+            "apiVersion": "meta.k8s.io/v1",
+            "fieldManager": "kubectl-create",
+            "kind": "CreateOptions"
+        },
+        "kind": {
+            "group": "",
+            "version": "v1",
+            "kind": "Namespace"
+        },
+        "resource": {
+            "resource": "namespaces",
+            "group": "",
+            "version": "v1"
+        },
+        "requestKind": {
+            "version": "v1",
+            "kind": "Namespace",
+            "group": ""
+        },
+        "operation": "CREATE",
+        "userInfo": {
+            "username": "shindom",
+            "uid": "vmware.com:7a3e0819-e53a-4fad-978f-0fd8aa6ecb2d",
+            "groups": [
+                "tmc:admin",
+                "system:authenticated"
+            ]
+        },
+        "object": {
+            "apiVersion": "v1",
+            "kind": "Namespace",
+            "metadata": {
+                "name": "ns-good",
+                "uid": "564d201b-681b-44fb-8544-a04db15c2fcd",
+                "creationTimestamp": "2021-02-21T09:57:24Z",
+                "managedFields": [
+                    {
+                        "manager": "kubectl-create",
+                        "operation": "Update",
+                        "apiVersion": "v1",
+                        "time": "2021-02-21T09:57:24Z",
+                        "fieldsType": "FieldsV1",
+                        "fieldsV1": {
+                            "f:status": {
+                                "f:phase": {}
+                            }
+                        }
+                    }
+                ]
+            },
+            "spec": {
+                "finalizers": [
+                    "kubernetes"
+                ]
+            },
+            "status": {
+                "phase": "Active"
+            }
+        }
+    }
+}

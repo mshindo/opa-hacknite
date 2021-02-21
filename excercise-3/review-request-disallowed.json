@@ -1,0 +1,82 @@
+{
+    "parameters": {
+        "words": [
+            "master",
+            "slave",
+            "white",
+            "black"
+        ]
+    },
+    "review": {
+        "resource": {
+            "group": "",
+            "version": "v1",
+            "resource": "namespaces"
+        },
+        "requestKind": {
+            "group": "",
+            "version": "v1",
+            "kind": "Namespace"
+        },
+        "requestResource": {
+            "group": "",
+            "version": "v1",
+            "resource": "namespaces"
+        },
+        "name": "ns-slave",
+        "operation": "CREATE",
+        "userInfo": {
+            "username": "shindom",
+            "uid": "vmware.com:7a3e0819-e53a-4fad-978f-0fd8aa6ecb2d",
+            "groups": [
+                "tmc:admin",
+                "system:authenticated"
+            ]
+        },
+        "uid": "3d2346eb-cebc-47b1-ac0f-96787acc0dc6",
+        "kind": {
+            "group": "",
+            "version": "v1",
+            "kind": "Namespace"
+        },
+        "dryRun": false,
+        "_unstable": {},
+        "options": {
+            "kind": "CreateOptions",
+            "apiVersion": "meta.k8s.io/v1",
+            "fieldManager": "kubectl-create"
+        },
+        "object": {
+            "apiVersion": "v1",
+            "kind": "Namespace",
+            "metadata": {
+                "creationTimestamp": "2021-02-21T12:53:13Z",
+                "managedFields": [
+                    {
+                        "apiVersion": "v1",
+                        "time": "2021-02-21T12:53:13Z",
+                        "fieldsType": "FieldsV1",
+                        "fieldsV1": {
+                            "f:status": {
+                                "f:phase": {}
+                            }
+                        },
+                        "manager": "kubectl-create",
+                        "operation": "Update"
+                    }
+                ],
+                "name": "ns-slave",
+                "uid": "a17a77e6-6c81-4154-bd6f-5cc5de1f5091"
+            },
+            "spec": {
+                "finalizers": [
+                    "kubernetes"
+                ]
+            },
+            "status": {
+                "phase": "Active"
+            }
+        },
+        "oldObject": null
+    }
+}
