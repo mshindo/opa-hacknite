@@ -1,0 +1,208 @@
+{
+    "parameters": {
+        "max": "10000",
+        "min": "1000"
+    },
+    "review": {
+        "operation": "CREATE",
+        "userInfo": {
+            "username": "shindom",
+            "uid": "vmware.com:7a3e0819-e53a-4fad-978f-0fd8aa6ecb2d",
+            "groups": [
+                "tmc:admin",
+                "system:authenticated"
+            ]
+        },
+        "object": {
+            "apiVersion": "v1",
+            "kind": "Pod",
+            "metadata": {
+                "managedFields": [
+                    {
+                        "fieldsV1": {
+                            "f:metadata": {
+                                "f:labels": {
+                                    ".": {},
+                                    "f:app": {}
+                                },
+                                "f:annotations": {
+                                    ".": {},
+                                    "f:kubectl.kubernetes.io/last-applied-configuration": {}
+                                }
+                            },
+                            "f:spec": {
+                                "f:dnsPolicy": {},
+                                "f:enableServiceLinks": {},
+                                "f:restartPolicy": {},
+                                "f:schedulerName": {},
+                                "f:securityContext": {},
+                                "f:terminationGracePeriodSeconds": {},
+                                "f:containers": {
+                                    "k:{\"name\":\"nginx\"}": {
+                                        "f:ports": {
+                                            ".": {},
+                                            "k:{\"containerPort\":8080,\"protocol\":\"TCP\"}": {
+                                                "f:containerPort": {},
+                                                "f:protocol": {},
+                                                ".": {}
+                                            }
+                                        },
+                                        "f:resources": {},
+                                        "f:terminationMessagePath": {},
+                                        "f:terminationMessagePolicy": {},
+                                        ".": {},
+                                        "f:image": {},
+                                        "f:imagePullPolicy": {},
+                                        "f:name": {}
+                                    }
+                                }
+                            }
+                        },
+                        "manager": "kubectl-client-side-apply",
+                        "operation": "Update",
+                        "apiVersion": "v1",
+                        "time": "2021-02-21T09:06:53Z",
+                        "fieldsType": "FieldsV1"
+                    }
+                ],
+                "name": "nginx-port-8080",
+                "namespace": "default",
+                "uid": "b48db7bb-60a1-4171-a6b7-3dd3b2df5e37",
+                "creationTimestamp": "2021-02-21T09:06:53Z",
+                "labels": {
+                    "app": "nginx"
+                },
+                "annotations": {
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Pod\",\"metadata\":{\"annotations\":{},\"labels\":{\"app\":\"nginx\"},\"name\":\"nginx-port-8080\",\"namespace\":\"default\"},\"spec\":{\"containers\":[{\"image\":\"nginx\",\"name\":\"nginx\",\"ports\":[{\"containerPort\":8080}]}]}}\n",
+                    "kubernetes.io/psp": "vmware-system-tmc-privileged"
+                }
+            },
+            "spec": {
+                "tolerations": [
+                    {
+                        "tolerationSeconds": 300,
+                        "key": "node.kubernetes.io/not-ready",
+                        "operator": "Exists",
+                        "effect": "NoExecute"
+                    },
+                    {
+                        "key": "node.kubernetes.io/unreachable",
+                        "operator": "Exists",
+                        "effect": "NoExecute",
+                        "tolerationSeconds": 300
+                    }
+                ],
+                "containers": [
+                    {
+                        "terminationMessagePolicy": "File",
+                        "imagePullPolicy": "Always",
+                        "name": "nginx",
+                        "image": "nginx",
+                        "ports": [
+                            {
+                                "containerPort": 8080,
+                                "protocol": "TCP"
+                            }
+                        ],
+                        "resources": {},
+                        "volumeMounts": [
+                            {
+                                "name": "default-token-b4pkt",
+                                "readOnly": true,
+                                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount"
+                            }
+                        ],
+                        "terminationMessagePath": "/dev/termination-log"
+                    }
+                ],
+                "dnsPolicy": "ClusterFirst",
+                "serviceAccount": "default",
+                "serviceAccountName": "default",
+                "securityContext": {},
+                "schedulerName": "default-scheduler",
+                "priority": 0,
+                "enableServiceLinks": true,
+                "volumes": [
+                    {
+                        "name": "default-token-b4pkt",
+                        "secret": {
+                            "secretName": "default-token-b4pkt"
+                        }
+                    }
+                ],
+                "restartPolicy": "Always",
+                "terminationGracePeriodSeconds": 30,
+                "preemptionPolicy": "PreemptLowerPriority"
+            },
+            "status": {
+                "phase": "Pending",
+                "qosClass": "BestEffort"
+            }
+        },
+        "uid": "7bea8583-47a5-4f38-9c97-3c718393aa3e",
+        "resource": {
+            "group": "",
+            "version": "v1",
+            "resource": "pods"
+        },
+        "requestResource": {
+            "resource": "pods",
+            "group": "",
+            "version": "v1"
+        },
+        "_unstable": {
+            "namespace": {
+                "metadata": {
+                    "creationTimestamp": "2021-02-18T13:07:57Z",
+                    "managedFields": [
+                        {
+                            "manager": "kube-apiserver",
+                            "operation": "Update",
+                            "apiVersion": "v1",
+                            "time": "2021-02-18T13:07:57Z",
+                            "fieldsType": "FieldsV1",
+                            "fieldsV1": {
+                                "f:status": {
+                                    "f:phase": {}
+                                }
+                            }
+                        }
+                    ],
+                    "name": "default",
+                    "selfLink": "/api/v1/namespaces/default",
+                    "uid": "548b2194-9b49-418c-b0e3-bea12dceac5b",
+                    "resourceVersion": "152"
+                },
+                "spec": {
+                    "finalizers": [
+                        "kubernetes"
+                    ]
+                },
+                "status": {
+                    "phase": "Active"
+                },
+                "kind": "Namespace",
+                "apiVersion": "v1"
+            }
+        },
+        "requestKind": {
+            "group": "",
+            "version": "v1",
+            "kind": "Pod"
+        },
+        "name": "nginx-port-8080",
+        "namespace": "default",
+        "kind": {
+            "group": "",
+            "version": "v1",
+            "kind": "Pod"
+        },
+        "dryRun": false,
+        "oldObject": null,
+        "options": {
+            "apiVersion": "meta.k8s.io/v1",
+            "fieldManager": "kubectl-client-side-apply",
+            "kind": "CreateOptions"
+        }
+    }
+}
